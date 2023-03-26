@@ -154,6 +154,10 @@ cython_debug/
 
 # other
 .DS_Store
+.gitkeep
+/cv_images
+/cv_output
+/cv_pages
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
