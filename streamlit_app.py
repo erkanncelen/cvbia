@@ -35,7 +35,7 @@ with open("cv_data.yaml", "r") as file:
 yaml_text = st.text_area("YAML input:", value=str(yaml_input), height=500, on_change=yaml_change())
 
 ## GENERATE CV BUTTON
-st.button('Generate CV', key='RunBtn', on_click=generate_cv(image=image_bytes_data, yaml_input=yaml_text), args=None, kwargs=None)
+st.button('Generate CV', key='RunBtn', on_click=yaml_change(), args=None, kwargs=None)
 
 ## DOWNLOAD BUTTON
 # cv_data = yaml.safe_load(yaml_text)
