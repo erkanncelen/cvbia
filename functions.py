@@ -14,7 +14,7 @@ def cleanup_files(directories:list=["cv_pages", "cv_images"]):
         for filename in os.listdir(directory):
             f = os.path.join(directory, filename)
             # checking if it is a file
-            if os.path.isfile(f):
+            if os.path.isfile(f) and filename != '.gitkeep':
                 os.remove(f)
 
 def write(
@@ -148,7 +148,7 @@ def merge_pdfs():
     for filename in os.listdir(directory):
         f = os.path.join(directory, filename)
         # checking if it is a file
-        if os.path.isfile(f):
+        if os.path.isfile(f) and filename != '.gitkeep':
             pdfs.append(f)
 
     pdfs = sorted(pdfs, reverse=False)
