@@ -46,7 +46,7 @@ biography: |
   box-office stars of all time.
 
 ## ALL roles MUST HAVE title, description FIELDS. 
-## MAKE SURE TO LEAVE enough SPACE FOR certifications.
+## MAKE SURE TO LEAVE ENOUGH SPACE FOR certifications.
 roles:
   - title: Lead Actor
     description: |
@@ -71,7 +71,7 @@ roles:
 certifications:
   - title: Data Build Stunts Professional
   - title: Amazon Web Stunts Associate
-  - title: Google CLoud Stunts Associate
+  - title: Google Cloud Stunts Associate
   - title: Scientology Exclusive Certificate
   - title: Big Stunts Academy 2022 Graduate
 
