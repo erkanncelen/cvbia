@@ -138,8 +138,7 @@ def page_end_checker(y:int, exp, spacing:int=12, punto:int=10):
     else:
         return False
 
-def merge_pdfs():
-    directory = 'cv_pages'
+def merge_pdfs(directory:str='cv_pages'):
     try:
         os.remove('cv_output/cv.pdf')
     except:

@@ -45,7 +45,7 @@ for page in doc:
 directory = 'cv_images'
 for filename in sorted(os.listdir(directory), reverse=False):
     f = os.path.join(directory, filename)
-    if os.path.isfile(f):
+    if os.path.isfile(f) and filename != '.gitkeep':
         st.sidebar.image(f)
 
 ## Footnote
