@@ -16,8 +16,8 @@ def generate_cv(yaml_input:str=None, image=None):
     yaml_checker(cv_data)
  
     ## REGISTER FONTS
-    pdfmetrics.registerFont(TTFont('regular', 'ProximaNova-Regular.ttf'))
-    pdfmetrics.registerFont(TTFont('bold', 'ProximaNova-Semibold.ttf'))
+    pdfmetrics.registerFont(TTFont('regular', 'fonts/ProximaNova-Regular.ttf'))
+    pdfmetrics.registerFont(TTFont('bold', 'fonts/ProximaNova-Semibold.ttf'))
 
 ## FIRST PAGE
     ## INITIATE CANVAS OBJECT
