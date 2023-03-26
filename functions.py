@@ -17,7 +17,16 @@ def cleanup_files(directories:list=["cv_pages", "cv_images"]):
             if os.path.isfile(f):
                 os.remove(f)
 
-def write(c:object, x:int, y:int, text:str, font:str='regular', punto:int=12, color:str='dark_grey', spacing:int=12):
+def write(
+    c:object, 
+    x:int, 
+    y:int, 
+    text:str, 
+    font:str='regular', 
+    punto:int=12, 
+    color:str='dark_grey', 
+    spacing:int=12
+    ):
     """
     Writes given text input with specified arguments.
 
@@ -52,8 +61,7 @@ def write(c:object, x:int, y:int, text:str, font:str='regular', punto:int=12, co
     if text:
         for line in text.splitlines():
             c.drawString(x, y, f"{line}")
-            if len(text.splitlines()) > 1:
-                y -= spacing
+            y -= spacing
 
     return y
 

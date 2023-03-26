@@ -9,16 +9,16 @@ import fitz
 st.title("CVBIA")
 
 ## IMAGE UPLOAD WIDGET
-uploaded_image = st.file_uploader("Upload your picture:")
-if uploaded_image:
-    img = Image.open(uploaded_image)
-    cropped_img = st_cropper(img, aspect_ratio=(1, 1))
-    img_byte_arr = io.BytesIO()
-    cropped_img.save(img_byte_arr, format='PNG')
-    image_bytes_data = img_byte_arr.getvalue()
-else:
-    image_bytes_data = None
-
+with st.container():
+    uploaded_image = st.file_uploader("Upload your picture:")
+    if uploaded_image:
+        img = Image.open(uploaded_image)
+        cropped_img = st_cropper(img, aspect_ratio=(1, 1), box_color='green')
+        img_byte_arr = io.BytesIO()
+        cropped_img.save(img_byte_arr, format='PNG')
+        image_bytes_data = img_byte_arr.getvalue()
+    else:
+        image_bytes_data = None
 
 ## YAML INPUT WIDGET
 with open("cv_data.yaml", "r") as file:
@@ -43,7 +43,7 @@ for page in doc:
     pix = page.get_pixmap(matrix=magnify)  # render page to an image
     pix.save(f"cv_images/page-{page.number}.png")
 directory = 'cv_images'
-for filename in os.listdir(directory):
+for filename in sorted(os.listdir(directory), reverse=False):
     f = os.path.join(directory, filename)
     if os.path.isfile(f):
         st.sidebar.image(f)
