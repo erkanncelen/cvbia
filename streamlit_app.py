@@ -13,7 +13,7 @@ st.title("CVBIA")
 
 ## IMAGE UPLOAD WIDGET
 with st.container():
-    uploaded_image = st.file_uploader("Upload and crop your picture:")
+    uploaded_image = st.file_uploader("Upload and crop your picture: (png, jpg, jpeg)")
     if uploaded_image:
         img = Image.open(uploaded_image)
         cropped_img = st_cropper(img, aspect_ratio=(1, 1), box_color='green')
