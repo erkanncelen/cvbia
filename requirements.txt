@@ -1,0 +1,6 @@
+pyyaml
+reportlab
+streamlit
+streamlit-cropper
+pypdf
+PyMuPDF
