@@ -174,7 +174,7 @@ def yaml_checker(yaml):
     assert 'role' in yaml, "'role' field is missing in yaml. this is a mandatory field."
     assert 'email' in yaml, "'email' field is missing in yaml. this is a mandatory field."
     
-    assert 'about me' in yaml, "'about me' field is missing in yaml. this is a mandatory field."
+    assert 'about_me' in yaml, "'about_me' field is missing in yaml. this is a mandatory field."
     assert 'education' in yaml, "'education' field is missing in yaml. this is a mandatory field."
     assert 'biography' in yaml, "'biography' field is missing in yaml. this is a mandatory field."
     assert 'roles' in yaml, "'roles' field is missing in yaml. this is a mandatory field."

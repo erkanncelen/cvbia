@@ -15,7 +15,7 @@ github: github.com/tomcruise
 
 ## LONG LINES MAY SPILL OVER ON OTHER CONTENTS. ADJUST NEW LINES ACCORDINGLY.
 ## DON'T CHANGE "about me: |" LINE BELOW. JUST EDIT THE PARAGRAPH.
-about me: |
+about_me: |
   I am a professional actor and Scientologist.
   I don't hire stunts people, I love doing my own stunts.
   I have extensive cloud experience, evidence can be 
