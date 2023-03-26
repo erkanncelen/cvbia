@@ -80,13 +80,14 @@ def generate_cv(yaml_input:str=None, image=None):
     x = 380
     if cv_data['roles']:
         write(c, x, y, text="Roles", font='bold', punto=12, color='purple', spacing=12)
-        y -= 13
+        y -= 20
         for role in cv_data['roles']:
             if role['title']:
                 y = write(c, x, y, text=role['title'], font='bold', punto=10, color='purple', spacing=12)
                 y -= 3
             if role['description']:
                 y = write(c, x, y, text=role['description'], font='regular', punto=8, color='dark_grey', spacing=12)
+                y -= 8
     
     # CERTIFICATIONS
     if 'certifications' in cv_data and cv_data['certifications']:
