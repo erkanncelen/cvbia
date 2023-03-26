@@ -4,9 +4,6 @@ import streamlit as st
 from streamlit_cropper import st_cropper
 import os
 import fitz
-import sys
-
-sys.tracebacklimit = 0
 
 ## PAGE TITLE
 st.title("CVBIA")
