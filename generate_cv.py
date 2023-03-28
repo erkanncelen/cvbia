@@ -49,7 +49,7 @@ def generate_cv(yaml_input:str=None, image=None):
     x = 40
     if cv_data["about_me"]:
         y = write(c, x, y, text="About Me", font='bold', punto=12, color='white', spacing=12)
-        y -= 13
+        y -= 8
         y = write(c, x, y, text=cv_data["about_me"], font='regular', punto=8, color='trans_white', spacing=12)
     
     # EDUCATION
@@ -68,11 +68,11 @@ def generate_cv(yaml_input:str=None, image=None):
                 y -= 8
 
     # BIOGRAPHY
-    y = 521
+    y = 540
     x = 380
     if cv_data['biography']:
         y = write(c, x, y, text="Biography", font='bold', punto=12, color='purple', spacing=12)
-        y -= 13
+        y -= 8
         y = write(c, x, y, text=cv_data['biography'], font='regular', punto=8, color='dark_grey', spacing=12)
     
     # ROLES
@@ -100,7 +100,7 @@ def generate_cv(yaml_input:str=None, image=None):
 
     # COMPETENCES
     y = 400
-    x = 600
+    x = 605
     if cv_data["competences"]:
         y = write(c, x, y, text="Competences", font='bold', punto=12, color='purple', spacing=12)
         y -= 13
