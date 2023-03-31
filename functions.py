@@ -123,7 +123,6 @@ def page_end_checker(y:int, exp, spacing:int=12, punto:int=10):
                     y -= spacing
         return y
     
-    spacing = 12
     y = size_checker(y, text=f"{exp['title']} @ {exp['company']}")
     y -= 10
     y = size_checker(y, text=f"{exp['start']} - {exp['end']}")
