@@ -50,7 +50,7 @@ def generate_cv(yaml_input:str=None, image=None):
     if cv_data["about_me"]:
         y = write(c, x, y, text="About Me", font='bold', punto=12, color='white', spacing=12)
         y -= 8
-        y = write(c, x, y, text=cv_data["about_me"], font='regular', punto=8, color='trans_white', spacing=12)
+        y = write(c, x, y, text=cv_data["about_me"], width=70, font='regular', punto=8, color='trans_white', spacing=12)
     
     # EDUCATION
     y = 205
@@ -73,7 +73,7 @@ def generate_cv(yaml_input:str=None, image=None):
     if cv_data['biography']:
         y = write(c, x, y, text="Biography", font='bold', punto=12, color='purple', spacing=12)
         y -= 8
-        y = write(c, x, y, text=cv_data['biography'], font='regular', punto=8, color='dark_grey', spacing=12)
+        y = write(c, x, y, text=cv_data['biography'], width=120, font='regular', punto=8, color='dark_grey', spacing=12)
     
     # ROLES
     y = 400
@@ -83,10 +83,10 @@ def generate_cv(yaml_input:str=None, image=None):
         y -= 13
         for role in cv_data['roles']:
             if role['title']:
-                y = write(c, x, y, text=role['title'], font='bold', punto=10, color='purple', spacing=12)
+                y = write(c, x, y, text=role['title'], width=50, font='bold', punto=10, color='purple', spacing=12)
                 y -= 3
             if role['description']:
-                y = write(c, x, y, text=role['description'], font='regular', punto=8, color='dark_grey', spacing=12)
+                y = write(c, x, y, text=role['description'], width=50, font='regular', punto=8, color='dark_grey', spacing=12)
                 y -= 8
     
     # CERTIFICATIONS
@@ -96,7 +96,7 @@ def generate_cv(yaml_input:str=None, image=None):
         y -= 8
         for certificate in cv_data['certifications']:
             if certificate['title']:
-                y = write(c, x, y, text=certificate['title'], font='regular', punto=8, color='dark_grey', spacing=12)
+                y = write(c, x, y, text=certificate['title'], width=50, font='regular', punto=8, color='dark_grey', spacing=12)
 
     # COMPETENCES
     y = 400
@@ -109,7 +109,7 @@ def generate_cv(yaml_input:str=None, image=None):
                 y = write(c, x, y, text=comp['title'], font='bold', punto=10, color='purple', spacing=12)
                 y -= 3
             if comp['description']:
-                y = write(c, x, y, text=comp['description'], font='regular', punto=8, color='dark_grey', spacing=12)
+                y = write(c, x, y, text=comp['description'], width=50, font='regular', punto=8, color='dark_grey', spacing=12)
                 y -= 8
 
     c.save()
@@ -144,9 +144,9 @@ def generate_cv(yaml_input:str=None, image=None):
             y = write(c, x, y, text=f"{exp['start']} - {exp['end']}", font='bold', punto=8, color='white', spacing=12)
             y -= 8
         if exp['description']:
-            y = write(c, x, y, text=exp['description'], font='regular', punto=8, color='trans_white', spacing=12)
+            y = write(c, x, y, text=exp['description'], width=120, font='regular', punto=8, color='trans_white', spacing=12)
         if exp['technologies']:
-            y = write(c, x, y, text=exp['technologies'], font='bold', punto=8, color='trans_white', spacing=12)
+            y = write(c, x, y, text=exp['technologies'], width=120, font='bold', punto=8, color='trans_white', spacing=12)
         y -= 13
     
     # CONTACT INFORMATION: only displayed on the last page

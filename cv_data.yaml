@@ -16,14 +16,9 @@ github: github.com/tomcruise
 ## LONG LINES MAY SPILL OVER ON OTHER CONTENTS. ADJUST NEW LINES ACCORDINGLY.
 ## DON'T CHANGE "about me: |" LINE BELOW. JUST EDIT THE PARAGRAPH.
 about_me: |
-  I am a professional actor and Scientologist.
-  I don't hire stunts people, I love doing my own stunts.
-  I have extensive cloud experience, evidence can be 
-  found in my Top Gun movies.
+  I am a professional actor and Scientologist. I don't hire stunts people, I love doing my own stunts. I have extensive cloud experience, evidence can be found in my Top Gun movies.
   
-  In my free time I love spending time with my children 
-  Suri, Isabella and Connor. I also like hanging from 
-  helicopters and stuff.
+  In my free time I love spending time with my children Suri, Isabella and Connor. I also like hanging from helicopters and stuff.
 
 ## MAXIMUM OF 4 DEGREES WILL FIT TO PAGE. 
 ## ALL DEGREES MUST HAVE degree, institution, year FIELDS.
@@ -39,11 +34,7 @@ education:
 ## LONG LINES MAY SPILL OVER ON OTHER CONTENTS. ADJUST NEW LINES ACCORDINGLY.
 ## DON'T CHANGE "biography: |" LINE BELOW. JUST EDIT THE PARAGRAPH.
 biography: |
-  Thomas Cruise Mapother IV (born July 3, 1962) is an American actor and producer. One of the world's 
-  highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three 
-  Golden Globe Awards, in addition to nominations for four Academy Awards. His films have grossed 
-  over $4 billion in North America and over $11.5 billion worldwide, making him one of the highest-grossing 
-  box-office stars of all time.
+  Thomas Cruise Mapother IV (born July 3, 1962) is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three Golden Globe Awards, in addition to nominations for four Academy Awards. His films have grossed over $4 billion in North America and over $11.5 billion worldwide, making him one of the highest-grossing box-office stars of all time.
 
 ## ALL roles MUST HAVE title, description FIELDS. 
 ## MAKE SURE TO LEAVE ENOUGH SPACE FOR certifications.
@@ -55,17 +46,11 @@ roles:
 
   - title: Analytics Engineer
     description: |
-      Helping to achieve Data Democratization 
-      using the modern data stack. Ingesting and
-      modelling data to enable self-service 
-      analytics, adhering to software engineering 
-      best practices.
+      Helping to achieve Data Democratization using the modern data stack. Ingesting and modelling data to enable self-service analytics, adhering to software engineering best practices.
 
   - title: Business Analyst
     description: |
-      I reveal actionable business insights from 
-      complex data sets and make these available
-      to end users in the most suitable format.
+      I reveal actionable business insights from complex data sets and make these available to end users in the most suitable format.
 
 ## IF YOU DON'T WANT TO PROVIDE certifications, DELETE ALL title FIELDS.
 certifications:
