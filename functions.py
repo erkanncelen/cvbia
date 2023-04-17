@@ -6,8 +6,10 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.utils import ImageReader
 from PIL import Image, ImageOps, ImageDraw
 import io
+import itertools
 import os
 from pypdf import PdfMerger
+import textwrap
 
 def cleanup_files(directories:list=["cv_pages", "cv_images"]):
     for directory in directories:
@@ -22,6 +24,7 @@ def write(
     x:int, 
     y:int, 
     text:str, 
+    width:int=60,
     font:str='regular', 
     punto:int=12, 
     color:str='dark_grey', 
@@ -59,7 +62,7 @@ def write(
 
     # DRAW STRING: for loop is used to manage multiple line inputs
     if text:
-        for line in text.splitlines():
+        for line in list(itertools.chain.from_iterable([textwrap.wrap(x, width=width) for x in text.splitlines()])):
             c.drawString(x, y, f"{line}")
             y -= spacing
 
