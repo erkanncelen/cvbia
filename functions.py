@@ -2,6 +2,7 @@ import yaml
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.utils import ImageReader
 from PIL import Image, ImageOps, ImageDraw
@@ -28,7 +29,8 @@ def write(
     font:str='regular', 
     punto:int=12, 
     color:str='dark_grey', 
-    spacing:int=12
+    spacing:int=12,
+    url:str=None
     ):
     """
     Writes given text input with specified arguments.
@@ -42,6 +44,7 @@ def write(
         punto: font size
         color: white, trans_white, purple, dark_grey, light_grey
         spacing: line spacing, only used for mutliple line inputs
+        url: URL to be written, starts with the URL domain, i.e. no "https://www."
     """
     # SET FONT
     c.setFont(font, punto)
@@ -62,6 +65,9 @@ def write(
 
     # DRAW STRING: for loop is used to manage multiple line inputs
     if text:
+        if url is not None:
+            c.drawString(x, y, text)
+            c.linkURL("https://www." + text, rect=(x, y, x - 40 + stringWidth(text, "regular", 12), y + 12), relative=0, thickness=0)
         for line in list(itertools.chain.from_iterable([textwrap.wrap(x, width=width) for x in text.splitlines()])):
             c.drawString(x, y, f"{line}")
             y -= spacing
