@@ -67,7 +67,7 @@ def write(
     if text:
         if url is not None:
             c.drawString(x, y, text)
-            c.linkURL("https://www." + text, rect=(x, y, x - 40 + stringWidth(text, "regular", 12), y + 12), relative=0, thickness=0)
+            c.linkURL("https://www." + text, rect=(x, y, x - 40 + stringWidth(text, font, punto + 4), y + punto), relative=0, thickness=0)
         for line in list(itertools.chain.from_iterable([textwrap.wrap(x, width=width) for x in text.splitlines()])):
             c.drawString(x, y, f"{line}")
             y -= spacing
