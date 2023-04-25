@@ -164,11 +164,11 @@ def generate_cv(yaml_input:str=None, image=None):
         y -= 15
     if 'linkedin' in cv_data and cv_data['linkedin']:
         y = write(c, x, y, text="Linkedin:", font='bold', punto=8, color='light_grey', spacing=0)
-        y = write(c, x+40, y, text=cv_data['linkedin'], font='regular', punto=8, color='dark_grey', spacing=0)
+        y = write(c, x+40, y, text=cv_data['linkedin'], font='regular', punto=8, color='dark_grey', spacing=0, url=cv_data['linkedin'])
         y -= 15
     if 'github' in cv_data and cv_data['github']:
         y = write(c, x, y, text="Github:", font='bold', punto=8, color='light_grey', spacing=0)
-        y = write(c, x+40, y, text=cv_data['github'], font='regular', punto=8, color='dark_grey', spacing=0)
+        y = write(c, x+40, y, text=cv_data['github'], font='regular', punto=8, color='dark_grey', spacing=0, url=cv_data['github'])
         y -= 15
     
     c.save()
