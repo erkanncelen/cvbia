@@ -1,10 +1,6 @@
 ## COPY THIS YAML TEXT IN YOUR EDITOR TO NOT LOSE YOUR DATA AND FOR EASIER EDITING.
 ## YOU CAN MAKE YOUR CHANGES HERE TOO IF YOU WANT TO.
-## BE CAREFUL WITH PROPER YAML INDENTATION, OTHERWISE THE TOOL WON'T WORK.
-## YOU CAN CREATE PARAGRAPHS WITH NEW LINES IN ALL description FIELDS.
-## MAKE SURE YOUR LINES FIT THE CV TEMPLATE PREVIEW ON THE LEFT PANE.
 
-## DON'T DELETE ANY FIELDS HERE, YOU CAN LEAVE THEM EMPTY IF YOU WANT TO.
 first_name: Tom
 last_name: Cruise
 role: Stunt Engineer
@@ -13,12 +9,8 @@ phone: +31 6 12345678
 linkedin: linkedin.com/tomcruise
 github: github.com/tomcruise
 
-## LONG LINES MAY SPILL OVER ON OTHER CONTENTS. ADJUST NEW LINES ACCORDINGLY.
-## DON'T CHANGE "about me: |" LINE BELOW. JUST EDIT THE PARAGRAPH.
 about_me: |
-  I am a professional actor and Scientologist. I don't hire stunts people, I love doing my own stunts. I have extensive cloud experience, evidence can be found in my Top Gun movies.
-  
-  In my free time I love spending time with my children Suri, Isabella and Connor. I also like hanging from helicopters and stuff.
+  I am a professional actor and Scientologist. I don't hire stunts people, I love doing my own stunts. I have extensive cloud experience, evidence can be found in my Top Gun movies. In my free time I love spending time with my children Suri, Isabella and Connor. I also like hanging from helicopters and stuff.
 
 ## MAXIMUM OF 4 DEGREES WILL FIT TO PAGE. 
 ## ALL DEGREES MUST HAVE degree, institution, year FIELDS.
@@ -31,8 +23,6 @@ education:
     institution: Henry Munro Middle School
     year: 1972 - 1976
 
-## LONG LINES MAY SPILL OVER ON OTHER CONTENTS. ADJUST NEW LINES ACCORDINGLY.
-## DON'T CHANGE "biography: |" LINE BELOW. JUST EDIT THE PARAGRAPH.
 biography: |
   Thomas Cruise Mapother IV (born July 3, 1962) is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three Golden Globe Awards, in addition to nominations for four Academy Awards. His films have grossed over $4 billion in North America and over $11.5 billion worldwide, making him one of the highest-grossing box-office stars of all time.
 
@@ -63,28 +53,22 @@ certifications:
 ## ALL competences MUST HAVE title, description FIELDS.
 competences:
   - title: Programming
-    description: |
-      Python, Java, Scala, SQL
+    description: Python, Java, Scala, SQL
 
   - title: Data Stack
-    description: |
-      Fivetran, Airbyte, DBT
+    description: Fivetran, Airbyte, DBT
 
   - title: Visualizations
-    description: |
-      Tableau, Power BI, Looker
+    description: Tableau, Power BI, Looker
 
   - title: Cloud
-    description: |
-      AWS, GCP, Azure
+    description: AWS, GCP, Azure
 
   - title: Tech
-    description: |
-      Git, Bash, Docker, Terraform, CI/CD
+    description: Git, Bash, Docker, Terraform, CI/CD
 
   - title: Languages
-    description: |
-      English, Spanish, Japanese
+    description: English, Spanish, Japanese
 
 ## INPUT AS MANY experience AS YOU WISH.
 ## THE TOOL WILL CREATE NEW PAGES WHEN NECESSARY.
