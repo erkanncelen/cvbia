@@ -23,10 +23,10 @@ def cleanup_files(directories:list=["cv_pages", "cv_images"]):
                 os.remove(f)
 
 def write(
-    c:object, 
-    x:int, 
-    y:int, 
-    text:str, 
+    c:object,
+    x:int,
+    y:int,
+    text:str,
     width:int=60,
     font:str='regular', 
     punto:int=12, 
@@ -67,11 +67,10 @@ def write(
 
     # DRAW STRING: for loop is used to manage multiple line inputs
     if text:
-        if url is not None:
-            c.drawString(x, y, text)
-            c.linkURL("https://www." + text, rect=(x, y, x - 40 + stringWidth(text, font, punto + 4), y + punto), relative=0, thickness=0)
         for line in list(itertools.chain.from_iterable([textwrap.wrap(x, width=width) for x in text.splitlines()])):
             c.drawString(x, y, f"{line}")
+            if url is not None:
+                c.linkURL("https://www." + text, rect=(x, y, x - 40 + stringWidth(text, font, punto + 4), y + punto), relative=0, thickness=0)
             y -= spacing
 
     return y

@@ -60,7 +60,7 @@ def generate_cv(yaml_input:str=None, image=None):
         y -= 13
         for edu in cv_data['education']:
             if edu['year']:
-                y = write(c, x, y, text=edu['year'], font='bold', punto=8, color='white', spacing=12)
+                y = write(c, x, y, text=edu['year'], font='bold', punto=8, color='trans_white', spacing=12)
             if edu['degree']:
                 y = write(c, x, y, text=edu['degree'], font='bold', punto=8, color='white', spacing=12)
             if edu['institution']:    
