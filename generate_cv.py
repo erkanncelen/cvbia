@@ -50,7 +50,7 @@ def generate_cv(yaml_input:str=None, image=None):
     if cv_data["about_me"]:
         y = write(c, x, y, text="About Me", font='bold', punto=12, color='white', spacing=12)
         y -= 8
-        y = write(c, x, y, text=cv_data["about_me"], width=65, font='regular', punto=8, color='trans_white', spacing=12)
+        y = write(c, x, y, text=cv_data["about_me"], width=64, font='regular', punto=8, color='trans_white', spacing=12)
     
     # EDUCATION
     y = 205
