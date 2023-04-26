@@ -11,6 +11,8 @@ import itertools
 import os
 from pypdf import PdfMerger
 import textwrap
+import pdf2pptx
+import subprocess
 
 def cleanup_files(directories:list=["cv_pages", "cv_images"]):
     for directory in directories:
@@ -146,16 +148,21 @@ def page_end_checker(y:int, exp, spacing:int=12, punto:int=10):
     else:
         return False
 
-def merge_pdfs(directory:str='cv_pages'):
+def merge_pdfs(input_directory:str='cv_pages', output_directory:str='cv_output'):
+    """
+    This function merges all pdfs into one, in the given directory.
+    Also creates a .pptx copy.
+    """
     try:
-        os.remove('cv_output/cv.pdf')
+        os.remove(f'{output_directory}/cv.pdf')
+        os.remove(f'{output_directory}/cv.pptx')
     except:
         pass
     pdfs = []
-    for filename in os.listdir(directory):
-        f = os.path.join(directory, filename)
+    for filename in os.listdir(input_directory):
+        f = os.path.join(input_directory, filename)
         # checking if it is a file
-        if os.path.isfile(f) and filename != '.gitkeep':
+        if os.path.isfile(f) and filename != '.gitkeep' and filename != 'cv.pptx':
             pdfs.append(f)
 
     pdfs = sorted(pdfs, reverse=False)
@@ -166,8 +173,9 @@ def merge_pdfs(directory:str='cv_pages'):
     for pdf in pdfs:
         merger.append(pdf)
 
-    merger.write("cv_output/cv.pdf")
+    merger.write(f"{output_directory}/cv.pdf")
     merger.close()
+    subprocess.run(['pdf2pptx', f'{output_directory}/cv.pdf'])
 
     return None
 

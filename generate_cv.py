@@ -173,9 +173,8 @@ def generate_cv(yaml_input:str=None, image=None):
     
     c.save()
 
-## MERGE PAGES INTO ONE PDF
-    merge_pdfs(directory='cv_pages')
-
+## MERGE PAGES INTO ONE PDF (SAVES A PPTX COPY AS WELL)
+    merge_pdfs(input_directory='cv_pages', output_directory='cv_output')
 
 if __name__ == "__main__":
     generate_cv()

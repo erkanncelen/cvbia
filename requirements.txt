@@ -4,3 +4,4 @@ streamlit
 streamlit-cropper
 pypdf
 PyMuPDF
+pdf2pptx

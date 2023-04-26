@@ -28,10 +28,13 @@ yaml_text = st.text_area("YAML input:", value=str(yaml_input), height=500)
 ## GENERATE CV BUTTON
 st.button('Generate CV', key='RunBtn', on_click=generate_cv(image=image_bytes_data, yaml_input=yaml_text), args=None, kwargs=None)
 
-## DOWNLOAD BUTTON
+## DOWNLOAD BUTTONS
 with open("cv_output/cv.pdf", "rb") as file:
     # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
-    st.sidebar.download_button("Download PDF", file, file_name="cv_download.pdf")
+    st.sidebar.download_button("Download PDF", file, file_name="cv.pdf")
+with open("cv_output/cv.pptx", "rb") as file:
+    # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
+    st.sidebar.download_button("Download PPTX", file, file_name="cv.pptx")
 
 ## PDF PREVIEW: need to convert resulting cv.pdf to images, in order to display cv preview on streamlit page
 dpi = 100
