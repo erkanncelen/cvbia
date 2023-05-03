@@ -51,4 +51,6 @@ for filename in sorted(os.listdir(directory), reverse=False):
         st.sidebar.image(f)
 
 ## Footnote
-st.caption("Developed By: Erkan Celen")
+st.caption("""Developed By: Erkan Celen
+
+⚠️Note: Please save your `YAML input` locally, refreshing this page will reset the input to the default values and the loss of any data you have entered.""")
