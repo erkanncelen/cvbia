@@ -3,5 +3,5 @@ reportlab
 streamlit
 streamlit-cropper
 pypdf
-PyMuPDF
+PyMuPDF>=1.22.0
 pdf2pptx
