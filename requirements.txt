@@ -1,9 +1,10 @@
+black
 pyyaml
 reportlab
 streamlit
 streamlit-cropper
+pre-commit
 pypdf
 PyMuPDF>=1.22.0
-# pdf2pptx
 python-pptx
 tqdm
