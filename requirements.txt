@@ -1,3 +1,4 @@
+black
 pyyaml
 reportlab
 streamlit
@@ -5,3 +6,4 @@ streamlit-cropper
 pypdf
 PyMuPDF
 pdf2pptx
+pre-commit

@@ -12,7 +12,7 @@ github: github.com/tomcruise
 about_me: |
   I am a professional actor and Scientologist. I don't hire stunts people, I love doing my own stunts. I have extensive cloud experience, evidence can be found in my Top Gun movies. In my free time I love spending time with my children Suri, Isabella and Connor. I also like hanging from helicopters and stuff.
 
-## MAXIMUM OF 4 DEGREES WILL FIT TO PAGE. 
+## MAXIMUM OF 4 DEGREES WILL FIT TO PAGE.
 ## ALL DEGREES MUST HAVE degree, institution, year FIELDS.
 education:
   - degree: MSc in Acting (Cum Laude)
@@ -26,12 +26,12 @@ education:
 biography: |
   Thomas Cruise Mapother IV (born July 3, 1962) is an American actor and producer. One of the world's highest-paid actors, he has received various accolades, including an Honorary Palme d'Or and three Golden Globe Awards, in addition to nominations for four Academy Awards. His films have grossed over $4 billion in North America and over $11.5 billion worldwide, making him one of the highest-grossing box-office stars of all time.
 
-## ALL roles MUST HAVE title, description FIELDS. 
+## ALL roles MUST HAVE title, description FIELDS.
 ## MAKE SURE TO LEAVE ENOUGH SPACE FOR certifications.
 roles:
   - title: Lead Actor
     description: |
-      Three times Golden Globe winner actor. 
+      Three times Golden Globe winner actor.
       Improving movie infrastructure.
 
   - title: Analytics Engineer
@@ -86,7 +86,7 @@ experience:
       • Optimized database performance.
       • Did some more cool stuff.
     technologies: AWS, Databricks, Python, Spark, SQL
- 
+
   - title: Analytics Engineer
     company: Top Gun Maverick
     start: 2022 May
@@ -96,7 +96,7 @@ experience:
       Built cool things with these.
       Got compliments about how cool these were.
     technologies: AWS, Databricks, Fivetran, DBT, Python, SQL
-    
+
   - title: Business Analyst
     company: The Last Samurai
     start: 2003 June
@@ -107,7 +107,7 @@ experience:
       • It didn't really go as planned, but I have no regrets.
       • I made pretty good money anyways.
     technologies: AWS, Airbyte, Katana, Python, SQL
-  
+
   - title: Business Analyst
     company: The Last Samurai
     start: 2003 June
