@@ -1,3 +1,10 @@
+<p align="center">
+    <img align="center" src="./images/repo_image.png" width="66%">
+</p>
+<div align="center">
+    <font><em>Courtesy of DALL·E.</em></font>
+</div>
+
 ## CVBIA
 
 Create CVs in PDF and PPT formats from YAML input.
