@@ -4,4 +4,6 @@ streamlit
 streamlit-cropper
 pypdf
 PyMuPDF>=1.22.0
-pdf2pptx
+# pdf2pptx
+python-pptx
+tqdm

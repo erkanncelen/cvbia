@@ -6,13 +6,19 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.utils import ImageReader
 from PIL import Image, ImageOps, ImageDraw
+import fitz
 import io
 import itertools
 import os
+from pathlib import Path
+from pptx import Presentation
+from pptx.util import Cm
 from pypdf import PdfMerger
+import sys
 import textwrap
-import pdf2pptx
+from tqdm import trange
 import subprocess
+
 
 def cleanup_files(directories:list=["cv_pages", "cv_images"]):
     for directory in directories:
@@ -174,9 +180,86 @@ def merge_pdfs(input_directory:str='cv_pages', output_directory:str='cv_output')
 
     merger.write(f"{output_directory}/cv.pdf")
     merger.close()
-    subprocess.run(['pdf2pptx', f'{output_directory}/cv.pdf'])
+    generate_pptx_from_pdf(
+        pdf_file=f"{output_directory}/cv.pdf", output_file=f"{output_directory}/cv.pptx"
+    )
 
     return None
+
+def generate_pptx_from_pdf(
+    pdf_file: str,
+    output_file: str = "PDF_FILE.pptx",
+    resolution: int = 300,
+    start_page: int = 0,
+    page_count: int = None,
+):
+    """
+    Convert a PDF slideshow to Powerpoint PPTX.
+
+    Source: https://github.com/kevinmcguinness/pdf2pptx/blob/master/pdf2pptx/__init__.py
+
+    Renders each page as a PNG image and creates the resulting Powerpoint
+    slideshow from these images. Useful when you want to use Powerpoint
+    to present a set of PDF slides (e.g. slides from Beamer). You can then
+    use the presentation capabilities of Powerpoint (notes, ink on slides,
+    etc.) with slides created in LaTeX.
+
+    Arguments:
+        pdf_file: location of pdf file to convert to pptx file
+        output_file: location to save the pptx (default: PDF_FILE.pptx)
+        resolution: resolution in dots per inch (default: 300)
+        start_page: first page in the pdf to copy to the pptx
+        page_count: number of pages in the pdf to copy to the pptx
+    """
+    doc = fitz.open(pdf_file)
+
+    try:
+        print(pdf_file, "contains", doc.pageCount, "slides")
+    except:
+        print(pdf_file, "contains", doc.page_count, "slides")
+
+    if page_count is None:
+        page_count = doc.page_count
+
+    # transformation matrix: slide to pixmap
+    zoom = resolution / 72
+    matrix = fitz.Matrix(zoom, zoom, 0)
+
+    # create pptx presentation
+    prs = Presentation()
+    blank_slide_layout = prs.slide_layouts[6]
+
+    # configure presentation aspect ratio
+    page = doc.load_page(0)
+
+    aspect_ratio = page.rect.width / page.rect.height
+    prs.slide_width = int(prs.slide_height * aspect_ratio)
+
+    # iterate over slides
+    for page_no in trange(start_page, start_page + page_count):
+        page = doc.load_page(page_no)
+
+        # write slide as a pixmap
+        pixmap = page.get_pixmap(matrix=matrix)
+        image_data = pixmap.tobytes("png")
+
+        image_file = io.BytesIO(image_data)
+
+        # add a slide
+        slide = prs.slides.add_slide(blank_slide_layout)
+        left = top = Cm(0)
+        slide.shapes.add_picture(image_file, left, top, height=prs.slide_height)
+
+    if output_file is None:
+        output_file = Path(pdf_file).with_suffix(".pptx")
+
+    # save presentation
+    try:
+        prs.save(output_file)
+    except PermissionError as err:
+        print(err, file=sys.stderr)
+        sys.exit(1)
+
 
 def yaml_checker(yaml):
     """
