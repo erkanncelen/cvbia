@@ -86,6 +86,7 @@ experience:
       • Optimized database performance.
       • Did some more cool stuff.
     technologies: AWS, Databricks, Python, Spark, SQL
+    visible: true
 
   - title: Analytics Engineer
     company: Top Gun Maverick
@@ -96,6 +97,7 @@ experience:
       Built cool things with these.
       Got compliments about how cool these were.
     technologies: AWS, Databricks, Fivetran, DBT, Python, SQL
+    visible: false
 
   - title: Business Analyst
     company: The Last Samurai

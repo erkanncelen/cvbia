@@ -293,62 +293,63 @@ def generate_cv(yaml_input: str = None, image=None):
     x = 40
     page = 2
     for exp in cv_data["experience"]:
-        if page_end_checker(y, exp):
-            c.save()
-            page += 1
-            c = canvas.Canvas(f"cv_pages/cv{page}.pdf", pagesize=landscape(A4))
-            bg_image = "backgrounds/background2.jpg"
-            c.drawImage(bg_image, 0, 0, width=A4[1], height=A4[0])
-            y = 500
-            x = 40
-        if exp["title"] and exp["company"]:
-            y = write(
-                c,
-                x,
-                y,
-                text=f"{exp['title']} @ {exp['company']}",
-                font="bold",
-                punto=10,
-                color="white",
-                spacing=12,
-            )
-        if exp["start"] and exp["end"]:
-            y = write(
-                c,
-                x,
-                y,
-                text=f"{exp['start']} - {exp['end']}",
-                font="bold",
-                punto=8,
-                color="white",
-                spacing=12,
-            )
-            y -= 8
-        if exp["description"]:
-            y = write(
-                c,
-                x,
-                y,
-                text=exp["description"],
-                width=120,
-                font="regular",
-                punto=8,
-                color="trans_white",
-                spacing=12,
-            )
-        if exp["technologies"]:
-            y = write(
-                c,
-                x,
-                y,
-                text=exp["technologies"],
-                width=120,
-                font="bold",
-                punto=8,
-                color="trans_white",
-                spacing=12,
-            )
-        y -= 13
+        if exp.get("visible", True) == True:
+            if page_end_checker(y, exp):
+                c.save()
+                page += 1
+                c = canvas.Canvas(f"cv_pages/cv{page}.pdf", pagesize=landscape(A4))
+                bg_image = "backgrounds/background2.jpg"
+                c.drawImage(bg_image, 0, 0, width=A4[1], height=A4[0])
+                y = 500
+                x = 40
+            if exp["title"] and exp["company"]:
+                y = write(
+                    c,
+                    x,
+                    y,
+                    text=f"{exp['title']} @ {exp['company']}",
+                    font="bold",
+                    punto=10,
+                    color="white",
+                    spacing=12,
+                )
+            if exp["start"] and exp["end"]:
+                y = write(
+                    c,
+                    x,
+                    y,
+                    text=f"{exp['start']} - {exp['end']}",
+                    font="bold",
+                    punto=8,
+                    color="white",
+                    spacing=12,
+                )
+                y -= 8
+            if exp["description"]:
+                y = write(
+                    c,
+                    x,
+                    y,
+                    text=exp["description"],
+                    width=120,
+                    font="regular",
+                    punto=8,
+                    color="trans_white",
+                    spacing=12,
+                )
+            if exp["technologies"]:
+                y = write(
+                    c,
+                    x,
+                    y,
+                    text=exp["technologies"],
+                    width=120,
+                    font="bold",
+                    punto=8,
+                    color="trans_white",
+                    spacing=12,
+                )
+            y -= 13
 
     # CONTACT INFORMATION: only displayed on the last page
     y = 200
