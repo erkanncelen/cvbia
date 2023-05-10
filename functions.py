@@ -74,8 +74,13 @@ def write(
             c.drawString(x, y, f"{line}")
             if url is not None:
                 c.linkURL(
-                    "https://www." + text,
-                    rect=(x, y, x - 40 + stringWidth(text, font, punto + 4), y + punto),
+                    "https://www." + url,
+                    rect=(
+                        x,
+                        y,
+                        x + (0.66 * stringWidth(text, font, punto + 4)),
+                        y + punto,
+                    ),
                     relative=0,
                     thickness=0,
                 )

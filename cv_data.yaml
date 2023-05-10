@@ -8,6 +8,13 @@ email: tom.cruise@xebia.com
 phone: +31 6 12345678
 linkedin: linkedin.com/tomcruise
 github: github.com/tomcruise
+public_profiles:
+  Twitter:
+    text: "@TomCruise"
+    url: twitter.com/TomCruise
+  Wikipedia:
+    text: Tom Cruise (actor)
+    url: en.wikipedia.org/wiki/Tom_Cruise
 
 about_me: |
   I am a professional actor and Scientologist. I don't hire stunts people, I love doing my own stunts. I have extensive cloud experience, evidence can be found in my Top Gun movies. In my free time I love spending time with my children Suri, Isabella and Connor. I also like hanging from helicopters and stuff.
