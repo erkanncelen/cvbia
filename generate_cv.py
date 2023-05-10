@@ -435,6 +435,31 @@ def generate_cv(yaml_input: str = None, image=None):
         )
         y -= 15
 
+    if "public_profiles" in cv_data and cv_data["public_profiles"]:
+        for k, v in cv_data["public_profiles"].items():
+            y = write(
+                c,
+                x,
+                y,
+                text=f"{k}:",
+                font="bold",
+                punto=8,
+                color="light_grey",
+                spacing=0,
+            )
+            y = write(
+                c,
+                x + 40,
+                y,
+                text=v["text"],
+                font="regular",
+                punto=8,
+                color="dark_grey",
+                spacing=0,
+                url=v["url"],
+            )
+            y -= 15
+
     c.save()
 
     ## MERGE PAGES INTO ONE PDF (SAVES A PPTX COPY AS WELL)
