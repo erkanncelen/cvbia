@@ -5,18 +5,25 @@ from PIL import Image, ImageDraw
 import io
 import itertools
 import os
+from pathlib import Path
 from pypdf import PdfMerger
+import shutil
 import textwrap
 import subprocess
 
 
-def cleanup_files(directories: list = ["cv_pages", "cv_images"]):
+def cleanup_files(directories: list = ["cv_pages"]):
+    """
+    Removes directories, even if they contain files.
+    Arguments:
+        directories: List of directories to remove
+    """
+
     for directory in directories:
-        for filename in os.listdir(directory):
-            f = os.path.join(directory, filename)
-            # checking if it is a file
-            if os.path.isfile(f) and filename != ".gitkeep":
-                os.remove(f)
+        try:
+            shutil.rmtree(Path(directory))
+        except FileNotFoundError:
+            pass
 
 
 def write(

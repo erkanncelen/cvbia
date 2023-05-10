@@ -1,4 +1,5 @@
 from functions import *
+from pathlib import Path
 from reportlab.lib.pagesizes import landscape
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -26,6 +27,7 @@ def generate_cv(yaml_input: str = None, image=None):
 
     ## FIRST PAGE
     ## INITIATE CANVAS OBJECT
+    Path("cv_pages").mkdir(exist_ok=True)
     c = canvas.Canvas("cv_pages/cv1.pdf", pagesize=landscape(A4))
 
     ## SET BACKGROUND
@@ -464,6 +466,9 @@ def generate_cv(yaml_input: str = None, image=None):
 
     ## MERGE PAGES INTO ONE PDF (SAVES A PPTX COPY AS WELL)
     merge_pdfs(input_directory="cv_pages", output_directory="cv_output")
+
+    ## CLEANUP TEMPORARY FILES
+    cleanup_files(directories=["cv_pages"])
 
 
 if __name__ == "__main__":
