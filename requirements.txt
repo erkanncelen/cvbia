@@ -3,7 +3,8 @@ pyyaml
 reportlab
 streamlit
 streamlit-cropper
-pypdf
-PyMuPDF
-pdf2pptx
 pre-commit
+pypdf
+PyMuPDF>=1.22.0
+python-pptx
+tqdm
