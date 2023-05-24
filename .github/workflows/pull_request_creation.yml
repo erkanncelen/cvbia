@@ -36,7 +36,8 @@ jobs:
         run: python ./generate_cv.py
 
       - name: Run streamlit_app.py
-        run: streamlit run streamlit_app.py --server.headless true client.displayEnabled false browser.gatherUsageStats false
-        run: PID=$!
-        run: sleep 5
-        run: kill $PID
+        run: |
+          streamlit run streamlit_app.py --server.headless true client.displayEnabled false browser.gatherUsageStats false \
+          PID=$! \
+          sleep 5 \
+          kill $PID
