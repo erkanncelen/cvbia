@@ -37,3 +37,6 @@ jobs:
 
       - name: Run streamlit_app.py
         run: streamlit run streamlit_app.py --server.headless true client.displayEnabled false browser.gatherUsageStats false
+        run: PID=$!
+        run: sleep 5
+        run: kill $PID
