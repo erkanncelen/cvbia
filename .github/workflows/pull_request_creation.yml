@@ -36,4 +36,4 @@ jobs:
         run: python ./generate_cv.py
 
       - name: Run streamlit_app.py
-        run: streamlit run streamlit_app.py --server.headless true client.displayEnabled false
+        run: streamlit run streamlit_app.py --server.headless true client.displayEnabled false browser.gatherUsageStats false
