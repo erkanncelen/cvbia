@@ -45,10 +45,18 @@ with open("cv_output/cv.pptx", "rb") as file:
     # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
     st.sidebar.download_button("Download PPTX", file, file_name="cv.pptx")
 
+
+def button_action_load_data_to_dropbox(yaml_text, file_name):
+    try:
+        load_data_to_dropbox(yaml_text, file_name)
+    except KeyError:
+        st.warning("Please set env var DROPBOX_TOKEN", icon="⚠️")
+
+
 st.sidebar.button(
     "Load CV to Xebia Dropbox YAML",
     key="CV",
-    on_click=button_load_data_to_dropbox,
+    on_click=button_action_load_data_to_dropbox,
     args=(yaml_text, "cv_output/cv.pdf"),
 )
 

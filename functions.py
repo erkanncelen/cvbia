@@ -19,7 +19,7 @@ from tqdm import trange
 from dropbox_client import TransferData, convert_email_to_file_name
 
 
-def button_load_data_to_dropbox(yaml_text, file):
+def load_data_to_dropbox(yaml_text, file):
     transferData = TransferData()
     cv_data = yaml.safe_load(yaml_text)
     base_file_name = convert_email_to_file_name(cv_data["email"])

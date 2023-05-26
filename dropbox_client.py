@@ -1,15 +1,13 @@
 import os
-from pathlib import Path
 
 import dropbox
 
-BASE_PATH = Path("/home/Team/testing cvbia")
+BASE_PATH = "/home/Team/testing cvbia"
 
 
 def convert_email_to_file_name(email):
     email = email.split("@")[0].replace(".", "_")
-    base_file_name = Path(email)
-    return Path.joinpath(BASE_PATH, base_file_name)
+    return f"{BASE_PATH}/{email}"
 
 
 class TransferData:
