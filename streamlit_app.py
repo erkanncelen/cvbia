@@ -60,6 +60,13 @@ st.sidebar.button(
     args=(yaml_text, "cv_output/cv.pdf"),
 )
 
+st.sidebar.button(
+    "Download CV",
+    key="CVDownload",
+    on_click=dowload_file_from_dropbox,
+    args=(yaml_text,),
+)
+
 ## PDF PREVIEW: need to convert resulting cv.pdf to images, in order to display cv preview on streamlit page
 dpi = 100
 zoom = dpi / 72

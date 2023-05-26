@@ -28,6 +28,14 @@ def load_data_to_dropbox(yaml_text, file):
     transferData.upload_file_yaml(yaml_text, file_to=f"{base_file_name}.yaml")
 
 
+def dowload_file_from_dropbox(yaml_text):
+    transferData = TransferData()
+    cv_data = yaml.safe_load(yaml_text)
+    email = cv_data["email"]
+    print(email)
+    transferData.download_file(email=email)
+
+
 def cleanup_files(directories: list = ["cv_pages", "cv_images"]):
     for directory in directories:
         for filename in os.listdir(directory):

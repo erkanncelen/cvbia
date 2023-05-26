@@ -1,6 +1,7 @@
 import os
 
 import dropbox
+import yaml
 
 BASE_PATH = "/home/Team/testing cvbia"
 
@@ -30,5 +31,6 @@ class TransferData:
 
     def download_file(self, email):
         file_path = convert_email_to_file_name(email=email)
-        _, f = self.dbx.dbx.files_download(file_path)
-        return f.content
+        _, f = self.dbx.files_download(f"{file_path}.yaml")
+        yaml_content = yaml.safe_load(f.content)
+        return yaml_content
