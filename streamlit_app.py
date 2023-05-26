@@ -10,10 +10,12 @@ from dropbox_client import TransferData
 ## PAGE TITLE
 st.title("CVBIA")
 
+
 def button_load_data_to_dropbox(yaml_text, file):
     transferData = TransferData()
-    transferData.upload_file(file, file_to = "/home/Team/testing cvbia/1.pdf")
-    transferData.upload_file_yaml(yaml_text, file_to = "/home/Team/testing cvbia/1.yaml")
+    transferData.upload_file(file, file_to="/home/Team/testing cvbia/2.pdf")
+    transferData.upload_file_yaml(yaml_text, file_to="/home/Team/testing cvbia/2.yaml")
+
 
 ## IMAGE UPLOAD WIDGET
 with st.container():
@@ -49,7 +51,12 @@ with open("cv_output/cv.pptx", "rb") as file:
     # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
     st.sidebar.download_button("Download PPTX", file, file_name="cv.pptx")
 
-st.sidebar.button("Load CV to Xebia Dropbox YAML", key="CV", on_click=button_load_data_to_dropbox(yaml_text, "cv_output/cv.pdf"))
+st.sidebar.button(
+    "Load CV to Xebia Dropbox YAML",
+    key="CV",
+    on_click=button_load_data_to_dropbox,
+    args=(yaml_text, "cv_output/cv.pdf"),
+)
 
 ## PDF PREVIEW: need to convert resulting cv.pdf to images, in order to display cv preview on streamlit page
 dpi = 100
