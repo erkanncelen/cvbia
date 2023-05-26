@@ -1,6 +1,15 @@
 import os
+from pathlib import Path
 
 import dropbox
+
+BASE_PATH = Path("/home/Team/testing cvbia")
+
+
+def convert_email_to_file_name(email):
+    email = email.split("@")[0].replace(".", "_")
+    base_file_name = Path(email)
+    return Path.joinpath(BASE_PATH, base_file_name)
 
 
 class TransferData:
@@ -20,3 +29,8 @@ class TransferData:
             self.dbx.files_upload(
                 f.read(), file_to, mode=dropbox.files.WriteMode.overwrite
             )
+
+    def download_file(self, email):
+        file_path = convert_email_to_file_name(email=email)
+        _, f = self.dbx.dbx.files_download(file_path)
+        return f.content
