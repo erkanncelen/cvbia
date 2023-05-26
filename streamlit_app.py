@@ -1,36 +1,15 @@
 import os
-from pathlib import Path
 
 import fitz
 import streamlit as st
-import yaml
-from dropbox_client import TransferData
 from streamlit_cropper import st_cropper
 
 from functions import *
 from generate_cv import *
 
-
-BASE_PATH = Path("/home/Team/testing cvbia")
-
 ## PAGE TITLE
 st.title("CVBIA")
 
-def calculate_file_name(cv_data):
-    first_name = cv_data["first_name"].replace(" ", "_")
-    last_name = cv_data["last_name"].replace(" ", "_")
-    base_file_name = Path(f"{first_name}_{last_name}")
-    return Path.joinpath(BASE_PATH, base_file_name)
-
-def button_load_data_to_dropbox(yaml_text, file):
-    transferData = TransferData()
-    cv_data = yaml.safe_load(yaml_text)
-    base_file_name = calculate_file_name(cv_data)
-
-    transferData.upload_file(file, file_to=f"{base_file_name}.pdf")
-    transferData.upload_file_yaml(
-        yaml_text, file_to=f"{base_file_name}.yaml"
-    )
 
 ## IMAGE UPLOAD WIDGET
 with st.container():

@@ -1,18 +1,40 @@
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfbase.pdfmetrics import stringWidth
-from reportlab.lib.utils import ImageReader
-from PIL import Image, ImageDraw
-import fitz
 import io
 import itertools
 import os
+import sys
+import textwrap
 from pathlib import Path
+
+import fitz
+import yaml
+from PIL import Image, ImageDraw
 from pptx import Presentation
 from pptx.util import Cm
 from pypdf import PdfMerger
-import sys
-import textwrap
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.utils import ImageReader
+from reportlab.pdfbase.pdfmetrics import stringWidth
 from tqdm import trange
+
+from dropbox_client import TransferData
+
+BASE_PATH = Path("/home/Team/testing cvbia")
+
+
+def calculate_file_name(cv_data):
+    first_name = cv_data["first_name"].replace(" ", "_")
+    last_name = cv_data["last_name"].replace(" ", "_")
+    base_file_name = Path(f"{first_name}_{last_name}")
+    return Path.joinpath(BASE_PATH, base_file_name)
+
+
+def button_load_data_to_dropbox(yaml_text, file):
+    transferData = TransferData()
+    cv_data = yaml.safe_load(yaml_text)
+    base_file_name = calculate_file_name(cv_data)
+
+    transferData.upload_file(file, file_to=f"{base_file_name}.pdf")
+    transferData.upload_file_yaml(yaml_text, file_to=f"{base_file_name}.yaml")
 
 
 def cleanup_files(directories: list = ["cv_pages", "cv_images"]):

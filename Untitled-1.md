@@ -6,5 +6,4 @@
 
 ## Having a method to call the section to modify and save the content.
 
-## Do the chatbot with slack 
- 
+## Do the chatbot with slack

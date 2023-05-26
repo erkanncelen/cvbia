@@ -1,5 +1,6 @@
-import dropbox
 import os
+
+import dropbox
 
 
 class TransferData:

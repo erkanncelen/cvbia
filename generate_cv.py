@@ -1,9 +1,10 @@
-from functions import *
+import yaml
 from reportlab.lib.pagesizes import landscape
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
-import yaml
+
+from functions import *
 
 
 def generate_cv(yaml_input: str = None, image=None):

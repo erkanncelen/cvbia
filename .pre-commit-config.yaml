@@ -21,6 +21,12 @@ repos:
       - id: black
         name: Run black formatter
         language_version: python
+  - repo: https://github.com/pycqa/isort
+    rev: 5.11.5
+    hooks:
+      - id: isort
+        name: isort
+        files: "\\.(py)$"
   - repo: https://github.com/PyCQA/autoflake
     rev: v2.1.1
     hooks:
