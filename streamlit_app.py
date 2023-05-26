@@ -7,14 +7,25 @@ import fitz
 
 from dropbox_client import TransferData
 
+BASE_PATH = "/home/Team/testing cvbia"
+
 ## PAGE TITLE
 st.title("CVBIA")
 
 
 def button_load_data_to_dropbox(yaml_text, file):
     transferData = TransferData()
-    transferData.upload_file(file, file_to="/home/Team/testing cvbia/2.pdf")
-    transferData.upload_file_yaml(yaml_text, file_to="/home/Team/testing cvbia/2.yaml")
+
+    cv_data = yaml.safe_load(yaml_text)
+    first_name = cv_data["first_name"].replace(" ", "_")
+    last_name = cv_data["last_name"].replace(" ", "_")
+    base_file_name = f"{first_name}_{last_name}"
+    print(f"{BASE_PATH}/{base_file_name}")
+
+    transferData.upload_file(file, file_to=f"{BASE_PATH}/{base_file_name}.pdf")
+    transferData.upload_file_yaml(
+        yaml_text, file_to=f"{BASE_PATH}/{base_file_name}.yaml"
+    )
 
 
 ## IMAGE UPLOAD WIDGET
