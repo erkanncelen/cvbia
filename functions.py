@@ -36,6 +36,14 @@ def dowload_file_from_dropbox(yaml_text):
     transferData.download_file(email=email)
 
 
+def update_cv_by_key(current_yaml, key, data):
+    if type(current_yaml[key]) == str:
+        current_yaml[key] = data
+    else:
+        current_yaml[key].append(data)
+    return current_yaml
+
+
 def cleanup_files(directories: list = ["cv_pages", "cv_images"]):
     for directory in directories:
         for filename in os.listdir(directory):
