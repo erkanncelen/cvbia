@@ -1,9 +1,8 @@
-name: Pull request workflow
+name: Daily integration workflow
 
 on:
-  pull_request:
-    branches:
-      - main
+  schedule:
+    - cron:  '0 8 * * *'
 
 jobs:
   pull-request-workflow:
@@ -28,9 +27,6 @@ jobs:
 
       - name: Install pip dependencies
         run: pip install -r requirements.txt
-
-      - name: Run pre-commit
-        run: pre-commit run -a
 
       - name: Run generate_cv.py
         run: python ./generate_cv.py
