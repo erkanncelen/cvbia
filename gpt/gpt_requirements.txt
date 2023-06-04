@@ -1,0 +1,7 @@
+openai
+python-dotenv
+pypdf
+opencv-python
+pytesseract
+pdf2image
+ppt2pdf
