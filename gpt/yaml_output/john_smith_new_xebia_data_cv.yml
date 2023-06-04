@@ -1,0 +1,52 @@
+
+first_name: "John"
+last_name: "Smith"
+role: "Data Engineer"
+email: "email@email.com"
+phone: "3868683442"
+linkedin: 
+github: 
+website: 
+about_me: "Hi there! I'm a dedicated Data Engineer with over 5 years of experience working with large datasets and building robust databases. I'm passionate about utilizing my skills in SQL, Java, and Python to create game-changing insights for businesses. Besides work, you can find me cycling, songwriting, and running. Excited to see what new challenges lie ahead!"
+education:
+  - degree: "BS Computer Science"
+    institution: "Texas University"
+    year: 
+biography: "John Smith is a dedicated Data Engineer with over 5 years of experience working with large datasets. He has a proven track record of building robust databases and implementing natural language processing tools to support data scientists. John is highly skilled in SQL, Java, Apache Spark, Hadoop, and Python, and is fluent in English and German. He holds a Bachelor's degree in Computer Science from Texas University, with a dual concentration in Machine Learning and a Business Foundations Certificate. His passion for delivering game-changing insights extends to his hobbies, including cycling, songwriting, and running."
+roles:
+  - title: "Data Engineer"
+    description: "Dedicated Data Engineer with 5+ years' experience in designing, implementing, and maintaining scalable databases and ETL processes for large datasets, seeking to deliver game-changing insights."
+  - title: "SQL server database developer"
+    description: "Develop and optimize SQL server database systems to maximize performance and efficiency while ensuring data accuracy and integrity for clientele."
+certifications:
+  - title: "CCA Cloudera Certified Associate"
+competences:
+  - title: "SKILLS"
+    description: "SQL, Java, Apache Spark, Hadoop, Python, Coding"
+  - title: "LANGUAGES"
+    description: "English, German"
+  - title: "HOBBIES"
+    description: "Cycling, Songwriting, Running"
+experience:
+  - title: "Data Engineer"
+    company: "FNB Nong Phai"
+    start: "2018 January"
+    end: "2018 December"
+    description: "Responsible for scaling machine learning models and making these models fit within banking environments. Implemented natural language processing tools to ensure machine-readable databases were ready for the team of data scientists."
+    technologies: "SQL, Spark, MongoDB, sci-kit-learn, Tensorflow, and Keras"
+    visible: true
+  - title: "Data Engineer"
+    company: "ABSA Washington"
+    start: "2015 January"
+    end: "2017 December"
+    description: "Responsible for developing database triggers, packages, functions, and stored procedures using PL/SQL and maintain the scripts for various data feeds across multiple regional and international offices of the company
+      
+      • Co-develop a SQL server database system to maximize performance benefits for clientele.
+      
+      • Assisted senior-level Data Scientists in the design of ETL processes, including SSIS packages.
+      
+      • Developed coherent Logical Data Models that helped guide important client business decisions.
+      
+      • Collaborate and coordinate with development teams to deploy data quality solutions and create and maintain standard operating procedure documentation."
+    technologies: "PL/SQL, SQL server, ETL processes, SSIS packages"
+    visible: true

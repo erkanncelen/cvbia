@@ -59,7 +59,7 @@ for filename in sorted(os.listdir(directory), reverse=False):
 ## Footnote
 st.caption(
     """
-⚠️Note: Please save your `YAML input` locally, refreshing this page will reset the input to the default values and the loss of any data you have entered.
+⚠️Note: Please save your `YAML input` locally, refreshing this page will reset the input to the default values and any data you have entered will be lost.
 
 Developed By: Erkan Celen
 """

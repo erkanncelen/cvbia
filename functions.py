@@ -164,7 +164,7 @@ def page_end_checker(y: int, exp, spacing: int = 12, punto: int = 10):
     y = size_checker(y, text=exp["technologies"])
     y -= 25
     print(y)
-    if y < 0:
+    if y < 50:
         return True
     else:
         return False
@@ -280,10 +280,6 @@ def generate_pptx_from_pdf(
 
 
 def yaml_checker(yaml):
-    """
-    This function is used to assess if the current cv page will be enough
-    to display the next experience block. If not, a new page should be created.
-    """
 
     assert (
         "first_name" in yaml
