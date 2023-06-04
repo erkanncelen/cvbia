@@ -6,7 +6,7 @@ from reportlab.pdfgen import canvas
 import yaml
 
 
-def generate_cv(yaml_input:str=None, image=None):
+def generate_cv(yaml_input: str = None, image=None):
     ## CLEANUP FILES
     cleanup_files(directories=["cv_pages", "cv_images"])
 

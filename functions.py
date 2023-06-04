@@ -280,7 +280,6 @@ def generate_pptx_from_pdf(
 
 
 def yaml_checker(yaml):
-
     assert (
         "first_name" in yaml
     ), "'first_name' field is missing in yaml. this is a mandatory field."

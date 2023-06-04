@@ -1,11 +1,11 @@
-from gpt_functions import pdf_reader, gpt_communicator, cv_text_to_yaml
-import os
-from datetime import datetime
+from gpt_functions import pdf_reader, cv_text_to_yaml
 
-cv_text = pdf_reader('gpt/test_files/john_smith_cv.pdf')
+cv_text = pdf_reader("gpt/test_files/john_smith_cv.pdf")
 output_file_name = "john_smith_new_xebia_data_cv"
 
-cv_text_to_yaml(cv_text=cv_text, output_dir="./gpt/yaml_output", output_file_name=output_file_name)
+cv_text_to_yaml(
+    cv_text=cv_text, output_dir="./gpt/yaml_output", output_file_name=output_file_name
+)
 
 # input_directory = "./gpt/pdf"
 # for filename in os.listdir(input_directory):
