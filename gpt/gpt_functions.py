@@ -9,11 +9,11 @@ from questions import questions
 import time
 
 load_dotenv()
-deployment_name = os.getenv("DEPLOYMENT-NAME")
+deployment_name = os.getenv("DEPLOYMENT_NAME")
 openai.api_type = "azure"
 openai.api_version = "2023-03-15-preview"
 openai.api_base = os.getenv("ENDPOINT")  # Your Azure OpenAI resource's endpoint value.
-openai.api_key = os.getenv("API-KEY")
+openai.api_key = os.getenv("API_KEY")
 
 
 def pdf_reader(pdf_path: str = None):
