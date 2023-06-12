@@ -1,11 +1,11 @@
 import openai
 import fitz
+import json
 import pytesseract
 import cv2
 import tempfile
 import os
 from dotenv import load_dotenv
-from questions import questions
 import time
 
 load_dotenv()
@@ -67,6 +67,12 @@ def cv_text_to_yaml(
 ):
     yaml_text = ""
     text = cv_text
+
+    # Load questions from JSON file in same directory
+    __location__ = os.path.realpath(
+        os.path.join(os.getcwd(), os.path.dirname(__file__))
+    )
+    questions = json.load(open(os.path.join(__location__, "questions.json")))
 
     first_name = gpt_communicator(text=text, question=questions["first_name"]).strip()
     yaml_text += "\n" + f'first_name: "{first_name}"'
