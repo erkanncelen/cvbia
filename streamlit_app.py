@@ -1,11 +1,13 @@
+import io
 import os
 
 import fitz
 import streamlit as st
 from streamlit_cropper import st_cropper
 
-from functions import *
-from generate_cv import *
+from helpers.draw import Image
+from helpers.dropbox import dowload_file_from_dropbox, load_data_to_dropbox
+from helpers.generate_cv import generate_cv
 
 ## PAGE TITLE
 st.title("CVBIA")

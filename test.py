@@ -1,12 +1,12 @@
-from dropbox_client import TransferData
-from functions import load_data_to_dropbox, update_cv_by_key
-from generate_cv import generate_cv
+from clients.dropbox_client import TransferData
+from helpers.dropbox import load_data_to_dropbox
+from helpers.file_helper import update_yaml_by_key
+from helpers.generate_cv import generate_cv
 
 td = TransferData()
-
 yaml_content = td.download_file("tom.cruise@xebia.com")
 
-new_content = update_cv_by_key(
+new_content = update_yaml_by_key(
     yaml_content,
     "education",
     {
@@ -16,8 +16,6 @@ new_content = update_cv_by_key(
     },
 )
 new_content = str(new_content)
-
-print(new_content)
 
 generate_cv(new_content)
 
