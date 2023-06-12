@@ -32,7 +32,6 @@ def dowload_file_from_dropbox(yaml_text):
     transferData = TransferData()
     cv_data = yaml.safe_load(yaml_text)
     email = cv_data["email"]
-    print(email)
     transferData.download_file(email=email)
 
 
