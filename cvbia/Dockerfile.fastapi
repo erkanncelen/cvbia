@@ -1,0 +1,19 @@
+FROM --platform=linux/amd64 python:3.10
+
+WORKDIR /src
+
+COPY requirements.txt /src
+
+RUN pip install --upgrade -r requirements.txt
+
+COPY src ./
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=30s \
+    CMD curl -f http://localhost:8000/health/ || exit 1
+
+RUN groupadd -r api && useradd --no-log-init -r -g api api
+USER api
+
+CMD ["uvicorn", "fastapi_app:app", "--host", "0.0.0.0", "--port", "8000"]
