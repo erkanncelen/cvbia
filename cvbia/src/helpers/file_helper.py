@@ -28,7 +28,6 @@ def merge_pdfs(input_directory: str = "cv_pages", output_directory: str = "cv_ou
             pdfs.append(f)
 
     pdfs = sorted(pdfs, reverse=False)
-    print(pdfs)
 
     merger = PdfMerger()
 
@@ -239,7 +238,6 @@ def page_end_checker(y: int, exp, spacing: int = 12, punto: int = 10):
     y -= 3
     y = size_checker(y, text=exp["technologies"])
     y -= 25
-    print(y)
     if y < 0:
         return True
     else:
