@@ -16,4 +16,4 @@ HEALTHCHECK --interval=30s --timeout=30s \
 RUN groupadd -r api && useradd --no-log-init -r -g api api
 USER api
 
-CMD ["uvicorn", "fastapi_app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "slack_bot.py"]

@@ -2,8 +2,18 @@ data "azurerm_resource_group" "this" {
   name = var.resource_group_name
 }
 
+data "azurerm_key_vault_secret" "dropbox_app_keyvault_secret" {
+  name         = local.dropbox_app_token_secret_name
+  key_vault_id = local.key_vault_id
+}
+
+data "azurerm_key_vault_secret" "dropbox_refresh_token_keyvault_secret" {
+  name         = local.dropbox_refresh_token_secret_name
+  key_vault_id = local.key_vault_id
+}
+
 resource "azurerm_service_plan" "this" {
-  name                = "spcvbia-fastapi"
+  name                = "spcvbia-slackbot"
   resource_group_name = local.resource_group_name
   location            = local.location
   os_type             = "Linux"
@@ -42,7 +52,7 @@ resource "azurerm_linux_web_app" "this" {
     container_registry_use_managed_identity = true
 
     application_stack {
-      docker_image     = "cvbia.azurecr.io/cvbia_fastapi"
+      docker_image     = "cvbia.azurecr.io/cvbia_slackbot"
       docker_image_tag = "latest"
     }
   }

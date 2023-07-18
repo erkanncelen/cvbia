@@ -10,7 +10,7 @@ terraform {
     resource_group_name  = "cvbia_test"
     storage_account_name = "sacvbia"
     container_name       = "tfstate"
-    key                  = "webapp-fastapi/terraform.tfstate"
+    key                  = "webapp-slackbot/terraform.tfstate"
   }
 }
 

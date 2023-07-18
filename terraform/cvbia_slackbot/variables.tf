@@ -18,6 +18,6 @@ variable "docker_repository" {
 
 variable "docker_image" {
   type        = string
-  default     = "usecaseapi:latest"
+  default     = "slackbot:latest"
   description = "Docker image name"
 }

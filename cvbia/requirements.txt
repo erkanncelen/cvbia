@@ -1,10 +1,10 @@
 dropbox>=11.36.0,<=12.0.0
-fastapi==0.95.2
 pypdf
 python-pptx
 PyMuPDF>=1.22.0
 pyyaml
 reportlab<4.0.0
+slack_bolt
 streamlit
 streamlit-cropper
 tqdm
