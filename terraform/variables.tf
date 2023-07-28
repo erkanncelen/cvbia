@@ -16,8 +16,14 @@ variable "docker_repository" {
   description = "Docker image name"
 }
 
-variable "docker_image" {
+variable "docker_image_streamlit" {
   type        = string
-  default     = "slackbot:latest"
-  description = "Docker image name"
+  default     = "cvbia.azurecr.io/cvbia_streamlit"
+  description = "Azure container registry image name"
+}
+
+variable "docker_image_slackbot" {
+  type        = string
+  default     = "cvbia.azurecr.io/cvbia_slackbot"
+  description = "Azure container registry image name"
 }
