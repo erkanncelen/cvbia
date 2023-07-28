@@ -1,12 +1,17 @@
-from functions import *
-from generate_cv import *
+import io
+import os
+
+import fitz
 import streamlit as st
 from streamlit_cropper import st_cropper
-import os
-import fitz
+
+from helpers.draw import Image
+from helpers.dropbox import dowload_file_from_dropbox, load_data_to_dropbox
+from helpers.generate_cv import generate_cv
 
 ## PAGE TITLE
 st.title("CVBIA")
+
 
 ## IMAGE UPLOAD WIDGET
 with st.container():
@@ -41,6 +46,28 @@ with open("cv_output/cv.pdf", "rb") as file:
 with open("cv_output/cv.pptx", "rb") as file:
     # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
     st.sidebar.download_button("Download PPTX", file, file_name="cv.pptx")
+
+
+def button_action_load_data_to_dropbox(yaml_text, file_name):
+    try:
+        load_data_to_dropbox(yaml_text, file_name)
+    except KeyError:
+        st.warning("Please set env var DROPBOX_TOKEN", icon="⚠️")
+
+
+st.sidebar.button(
+    "Load CV to Xebia Dropbox YAML",
+    key="CV",
+    on_click=button_action_load_data_to_dropbox,
+    args=(yaml_text, "cv_output/cv.pdf"),
+)
+
+st.sidebar.button(
+    "Download CV",
+    key="CVDownload",
+    on_click=dowload_file_from_dropbox,
+    args=(yaml_text,),
+)
 
 ## PDF PREVIEW: need to convert resulting cv.pdf to images, in order to display cv preview on streamlit page
 dpi = 100

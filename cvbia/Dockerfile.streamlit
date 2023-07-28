@@ -1,0 +1,16 @@
+FROM --platform=linux/amd64 python:3.10
+
+WORKDIR /src
+
+COPY requirements.txt /src
+RUN pip install --upgrade -r requirements.txt
+
+COPY src ./
+
+RUN mkdir ~/.streamlit
+RUN cp config.toml ~/.streamlit/config.toml
+
+EXPOSE 80
+
+ENTRYPOINT ["streamlit", "run"]
+CMD ["streamlit_app.py"]
