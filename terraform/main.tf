@@ -87,7 +87,6 @@ resource "azurerm_linux_web_app" "streamlit" {
     unauthenticated_action = "Return401"
     require_authentication = true
     require_https          = true
-    # default_provider = "aad"
 
     active_directory_v2  {
         client_id = azuread_application.this.application_id
