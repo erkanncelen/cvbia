@@ -3,7 +3,6 @@ from reportlab.lib.pagesizes import landscape
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
-import yaml
 
 
 def generate_cv(yaml_input: str = None, image=None):
@@ -11,11 +10,7 @@ def generate_cv(yaml_input: str = None, image=None):
     cleanup_files(directories=["cv_pages", "cv_images"])
 
     ## LOAD YAML
-    if yaml_input:
-        cv_data = yaml.safe_load(yaml_input)
-    else:
-        with open("cv_data.yaml", "r") as file:
-            cv_data = yaml.safe_load(file)
+    cv_data = load_yaml(yaml_input)
 
     ## ASSERT MANDATORY FIELDS IN YAML
     yaml_checker(cv_data)
