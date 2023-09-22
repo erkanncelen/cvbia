@@ -13,6 +13,26 @@ from pypdf import PdfMerger
 import sys
 import textwrap
 from tqdm import trange
+import yaml
+import re
+
+
+def generate_download_file_name(yaml_input):
+    cv_data = load_yaml(yaml_input)
+    yaml_checker(cv_data)
+    first_name = cv_data["first_name"]
+    last_name = cv_data["last_name"]
+    file_name_formatted = re.sub(" ", "-", f"{first_name}-{last_name}_CV")
+    print(file_name_formatted)
+    return file_name_formatted
+
+
+def load_yaml(yaml_input):
+    if yaml_input:
+        return yaml.safe_load(yaml_input)
+    else:
+        with open("cv_data.yaml", "r") as file:
+            return yaml.safe_load(file)
 
 
 def cleanup_files(directories: list = ["cv_pages", "cv_images"]):
@@ -281,16 +301,15 @@ def generate_pptx_from_pdf(
 
 def yaml_checker(yaml):
     """
-    This function is used to assess if the current cv page will be enough
-    to display the next experience block. If not, a new page should be created.
+    This function is used to check whether the yaml contains the required fields.
     """
 
-    assert (
-        "first_name" in yaml
-    ), "'first_name' field is missing in yaml. this is a mandatory field."
-    assert (
-        "last_name" in yaml
-    ), "'last_name' field is missing in yaml. this is a mandatory field."
+    assert yaml[
+        "first_name"
+    ], "'first_name' field is missing in yaml. this is a mandatory field."
+    assert yaml[
+        "last_name"
+    ], "'last_name' field is missing in yaml. this is a mandatory field."
     assert "role" in yaml, "'role' field is missing in yaml. this is a mandatory field."
     assert (
         "email" in yaml

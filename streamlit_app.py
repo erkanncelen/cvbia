@@ -36,11 +36,15 @@ st.button(
 
 ## DOWNLOAD BUTTONS
 with open("cv_output/cv.pdf", "rb") as file:
-    # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
-    st.sidebar.download_button("Download PDF", file, file_name="cv.pdf")
+    st.sidebar.download_button(
+        "Download PDF", file, file_name=f"{generate_download_file_name(yaml_text)}.pdf"
+    )
 with open("cv_output/cv.pptx", "rb") as file:
-    # st.download_button("Download PDF", file, file_name=f"{cv_data['first_name']}_{cv_data['first_name']}_cv.pdf")
-    st.sidebar.download_button("Download PPTX", file, file_name="cv.pptx")
+    st.sidebar.download_button(
+        "Download PPTX",
+        file,
+        file_name=f"{generate_download_file_name(yaml_text)}.pptx",
+    )
 
 ## PDF PREVIEW: need to convert resulting cv.pdf to images, in order to display cv preview on streamlit page
 dpi = 100
