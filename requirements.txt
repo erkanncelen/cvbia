@@ -1,10 +1,10 @@
-black
-pyyaml
+black==24.10.0
+pyyaml==6.0.2
 reportlab<4.0.0
-streamlit
-streamlit-cropper
+streamlit==1.39.0
+streamlit-cropper==0.2.2
 pre-commit
-pypdf
+pypdf<5
 PyMuPDF>=1.22.0
-python-pptx
-tqdm
+python-pptx==1.0.2
+tqdm==4.66.5
